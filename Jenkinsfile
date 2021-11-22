@@ -23,8 +23,8 @@ pipeline{
         
         stage('Upload Image'){
             steps{
-                withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
-                sh "docker login -u baraka7723 -p ${dockerHubPwd}"
+                withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerhub_id1')]) {
+                sh "docker login -u baraka7723 -p ${dockerhub_id1}"
                 }
                 sh 'docker push baraka7723/test:1.0.0'
             }
